@@ -1,0 +1,66 @@
+﻿@page
+@model Ecommerce.Pages.CatProveedores.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].MdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].Nombre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].Producto)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CatProveedore[0].Precio)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.CatProveedore) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Producto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Precio)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.CodProveedores">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.CodProveedores">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.CodProveedores">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

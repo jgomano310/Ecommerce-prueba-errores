@@ -1,0 +1,59 @@
+﻿@page
+@model Ecommerce.Pages.Distribuidores.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CatDistribuidore</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.CodigoLinea" class="control-label"></label>
+                <input asp-for="CatDistribuidore.CodigoLinea" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.CodigoLinea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.MdUuid" class="control-label"></label>
+                <input asp-for="CatDistribuidore.MdUuid" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.MdDate" class="control-label"></label>
+                <input asp-for="CatDistribuidore.MdDate" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.CodProvincia" class="control-label"></label>
+                <input asp-for="CatDistribuidore.CodProvincia" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.CodProvincia" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.CodMunicipio" class="control-label"></label>
+                <input asp-for="CatDistribuidore.CodMunicipio" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.CodMunicipio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDistribuidore.CodBarrio" class="control-label"></label>
+                <input asp-for="CatDistribuidore.CodBarrio" class="form-control" />
+                <span asp-validation-for="CatDistribuidore.CodBarrio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

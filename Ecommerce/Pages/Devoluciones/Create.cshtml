@@ -1,0 +1,49 @@
+﻿@page
+@model Ecommerce.Pages.Devoluciones.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CatDevolucionesPedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatDevolucionesPedido.CodDevolucion" class="control-label"></label>
+                <input asp-for="CatDevolucionesPedido.CodDevolucion" class="form-control" />
+                <span asp-validation-for="CatDevolucionesPedido.CodDevolucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDevolucionesPedido.MdUuid" class="control-label"></label>
+                <input asp-for="CatDevolucionesPedido.MdUuid" class="form-control" />
+                <span asp-validation-for="CatDevolucionesPedido.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDevolucionesPedido.MdDate" class="control-label"></label>
+                <input asp-for="CatDevolucionesPedido.MdDate" class="form-control" />
+                <span asp-validation-for="CatDevolucionesPedido.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatDevolucionesPedido.DescDevolucion" class="control-label"></label>
+                <input asp-for="CatDevolucionesPedido.DescDevolucion" class="form-control" />
+                <span asp-validation-for="CatDevolucionesPedido.DescDevolucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

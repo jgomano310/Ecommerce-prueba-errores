@@ -1,0 +1,59 @@
+﻿@page
+@model Ecommerce.Pages.CatProveedores.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CatProveedore</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.CodProveedores" class="control-label"></label>
+                <input asp-for="CatProveedore.CodProveedores" class="form-control" />
+                <span asp-validation-for="CatProveedore.CodProveedores" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.MdUuid" class="control-label"></label>
+                <input asp-for="CatProveedore.MdUuid" class="form-control" />
+                <span asp-validation-for="CatProveedore.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.MdDate" class="control-label"></label>
+                <input asp-for="CatProveedore.MdDate" class="form-control" />
+                <span asp-validation-for="CatProveedore.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.Nombre" class="control-label"></label>
+                <input asp-for="CatProveedore.Nombre" class="form-control" />
+                <span asp-validation-for="CatProveedore.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.Producto" class="control-label"></label>
+                <input asp-for="CatProveedore.Producto" class="form-control" />
+                <span asp-validation-for="CatProveedore.Producto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatProveedore.Precio" class="control-label"></label>
+                <input asp-for="CatProveedore.Precio" class="form-control" />
+                <span asp-validation-for="CatProveedore.Precio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

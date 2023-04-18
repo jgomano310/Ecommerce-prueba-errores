@@ -1,0 +1,78 @@
+﻿@page
+@model Ecommerce.Pages.TdhEstadoPedidos.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].MdUuid)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].MdDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodDevolucionNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodEstadoEnvioNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodEstadoPagoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodProductoNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodProveedoresNavigation)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TdhEstadoPedido[0].CodigoLineaNavigation)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.TdhEstadoPedido) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdUuid)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MdDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodDevolucionNavigation.CodDevolucion)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoEnvioNavigation.CodEstadoEnvio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodEstadoPagoNavigation.CodEstadoPago)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProductoNavigation.CodProducto)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodProveedoresNavigation.CodProveedores)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CodigoLineaNavigation.CodigoLinea)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

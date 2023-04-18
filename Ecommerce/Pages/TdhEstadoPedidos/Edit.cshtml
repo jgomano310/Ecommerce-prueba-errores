@@ -1,0 +1,70 @@
+﻿@page
+@model Ecommerce.Pages.TdhEstadoPedidos.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>TdhEstadoPedido</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="TdhEstadoPedido.Id" />
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.MdUuid" class="control-label"></label>
+                <input asp-for="TdhEstadoPedido.MdUuid" class="form-control" />
+                <span asp-validation-for="TdhEstadoPedido.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.MdDate" class="control-label"></label>
+                <input asp-for="TdhEstadoPedido.MdDate" class="form-control" />
+                <span asp-validation-for="TdhEstadoPedido.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodDevolucion" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodDevolucion" class="form-control" asp-items="ViewBag.CodDevolucion"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodDevolucion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodigoLinea" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodigoLinea" class="form-control" asp-items="ViewBag.CodigoLinea"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodigoLinea" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodEstadoEnvio" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodEstadoEnvio" class="form-control" asp-items="ViewBag.CodEstadoEnvio"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodEstadoEnvio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodEstadoPago" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodEstadoPago" class="form-control" asp-items="ViewBag.CodEstadoPago"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodEstadoPago" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodProducto" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodProducto" class="form-control" asp-items="ViewBag.CodProducto"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TdhEstadoPedido.CodProveedores" class="control-label"></label>
+                <select asp-for="TdhEstadoPedido.CodProveedores" class="form-control" asp-items="ViewBag.CodProveedores"></select>
+                <span asp-validation-for="TdhEstadoPedido.CodProveedores" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

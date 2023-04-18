@@ -1,0 +1,50 @@
+﻿@page
+@model Ecommerce.Pages.EstadoPago.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>CatEstadoPago</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatEstadoPago.MdUuid" class="control-label"></label>
+                <input asp-for="CatEstadoPago.MdUuid" class="form-control" />
+                <span asp-validation-for="CatEstadoPago.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatEstadoPago.MdDate" class="control-label"></label>
+                <input asp-for="CatEstadoPago.MdDate" class="form-control" />
+                <span asp-validation-for="CatEstadoPago.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatEstadoPago.DescEstadoPago" class="control-label"></label>
+                <input asp-for="CatEstadoPago.DescEstadoPago" class="form-control" />
+                <span asp-validation-for="CatEstadoPago.DescEstadoPago" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="CatEstadoPago.CodEstadoPago" />
+            <div class="form-group">
+                <label asp-for="CatEstadoPago.Id" class="control-label"></label>
+                <input asp-for="CatEstadoPago.Id" class="form-control" />
+                <span asp-validation-for="CatEstadoPago.Id" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

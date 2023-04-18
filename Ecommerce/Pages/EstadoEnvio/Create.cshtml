@@ -1,0 +1,49 @@
+﻿@page
+@model Ecommerce.Pages.EstadoEnvio.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>CatEstadoEnvio</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CatEstadoEnvio.CodEstadoEnvio" class="control-label"></label>
+                <input asp-for="CatEstadoEnvio.CodEstadoEnvio" class="form-control" />
+                <span asp-validation-for="CatEstadoEnvio.CodEstadoEnvio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatEstadoEnvio.MdUuid" class="control-label"></label>
+                <input asp-for="CatEstadoEnvio.MdUuid" class="form-control" />
+                <span asp-validation-for="CatEstadoEnvio.MdUuid" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatEstadoEnvio.MdDate" class="control-label"></label>
+                <input asp-for="CatEstadoEnvio.MdDate" class="form-control" />
+                <span asp-validation-for="CatEstadoEnvio.MdDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CatEstadoEnvio.DescEnvio" class="control-label"></label>
+                <input asp-for="CatEstadoEnvio.DescEnvio" class="form-control" />
+                <span asp-validation-for="CatEstadoEnvio.DescEnvio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
